@@ -63,17 +63,11 @@ $(document).ready(function(){
 		if(aboutOpen == false){
 		aboutOpen = true
 		$("#aboutPage").css("z-index", "4");
-		$("#aboutPage").animate({opacity: 1}, 150);
+		$("#aboutPage").animate({opacity: .8}, 150);
 		$("#container").animate({opacity: .5}, 150);
 		$("#aboutText").css("opacity", "1");
 		$("#aboutTitle").css("opacity", "1");
 		}
-	})
-
-	$('#downloadTitle').click(function(){
-		var c = document.getElementById('#box');
-		var t = c.getContext('2d');
-		window.open('',document.getElementById('the_canvas_element_id').toDataURL());
 	})
 
 	$('#printTitle').click(function(){
@@ -123,8 +117,8 @@ function printContent(el){
 	document.body.innerHTML = printcontent;
 	window.print();
 	document.body.innerHTML = restorepage;
+	location.reload();
 }
-
 
 function getIEVersion() {
   var sAgent = window.navigator.userAgent;
