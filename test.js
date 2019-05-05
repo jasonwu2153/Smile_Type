@@ -1,1 +1,1 @@
-alert("fuuu");
+window.print()

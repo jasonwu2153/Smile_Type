@@ -33,7 +33,7 @@ $(document).ready(function(){
 			var id = "glyphs/period.jpg?" + Math.random();
 			$(str2).attr('src', id)
 		}
-		else if(index == 49){}
+		else if(index == 35){}
 		else if(code == ";"){
 			index++
 			var id = "glyphs/;.jpg?" + Math.random();
@@ -69,6 +69,21 @@ $(document).ready(function(){
 		$("#aboutTitle").css("opacity", "1");
 		}
 	})
+
+	$('#back').click(function(){
+		if(aboutOpen==true && cameraOpen==false){
+			aboutOpen = false;
+			$("#aboutText").css("opacity", "1")
+			$("#aboutTitle").css("opacity", "1")
+			$("#aboutPage").animate({opacity: 0}, 150);
+			$("#container").animate({opacity: 1}, 150);
+		}
+			document.getElementById("smile").focus();
+		})
+
+
+
+
 })
 
 
