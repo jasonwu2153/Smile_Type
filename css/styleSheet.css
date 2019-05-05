@@ -1,0 +1,115 @@
+#container {
+  position: relative;
+  height: 100%;
+}
+
+#header {
+	text-align: center;
+}
+
+#infoTitle {
+  display: inline-block;
+  /* move to left */
+  position: relative;
+  float: left;
+  font-family: 'SuisseBPIntl-Regular', Regular;
+  font-size: 28px;
+  letter-spacing: -1.4px;
+  margin: 15px;
+
+  /* get rid of button color/background */
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+#downloadTitle {
+  display: inline-block;
+  /* move to right */
+  position: relative;
+  float: right;
+
+  font-family: 'SuisseBPIntl-Regular', Regular;
+  font-size: 28px;
+  letter-spacing: -1.4px;
+  margin: 15px;
+
+  /* get rid of button color/background */
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+#printTitle {
+  display: inline-block;
+  /* move to right */
+  position: relative;
+  float: right;
+
+
+  font-family: 'SuisseBPIntl-Regular', Regular;
+  font-size: 28px;
+  letter-spacing: -1.4px;
+  margin: 15px;
+
+  /* get rid of button color/background */
+  background-color: Transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+#smileGif {
+  display: inline-block;
+  width: 9%;
+  height: 9%;
+}
+
+#box{
+	margin-top: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	height: calc(100% - 120px);
+	width: calc(100% - 80px);
+	color: white;
+	font-size: 4em;
+}
+
+/* text box for input */
+#smile{
+	position: absolute;
+	background-color: #ffffff;
+	left: 0;
+	top: 100px;
+	height: calc(100% - 100px);
+	width: 100%;
+	color: white;
+	font-size: .000em;
+	border-style: none;
+	opacity: 0;
+	z-index: 2;
+}
+
+.glyph{
+	height: 150px;
+	width: 120px;
+	float: left;
+	background-color: #ffffff;
+}
+
+.row{
+	height: 150px;
+	width: 100%;
+}
+
+/* add SuisseBPIntl-Regular font */
+@font-face {
+  font-family: 'SuisseBPIntl-Regular';
+  src: url('fonts/SuisseBPIntl-Regular.otf') format('opentype');
+}
