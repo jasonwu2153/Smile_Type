@@ -11,7 +11,6 @@ window.onload = function(){
 $(document).ready(function(){
 	$('#smile').on('keydown', function(e) {
 		if(aboutOpen == true){return;}
-		idelTime = 0;
 		var str="#a" + (index);
 		var str2="#a" + (index+1);
 		var str3="#a" + (index+2);
@@ -34,9 +33,14 @@ $(document).ready(function(){
 			var id = "glyphs/period.jpg?" + Math.random();
 			$(str2).attr('src', id)
 		}
-		else if(code == "?"){
+		else if(code == ";"){
 			index++
-			var id = "glyphs/question.jpg?" + Math.random();
+			var id = "glyphs/;.jpg?" + Math.random();
+			$(str2).attr('src', id)
+		}
+		else if(code == "\""){
+			index++
+			var id = "glyphs/_.jpg?" + Math.random();
 			$(str2).attr('src', id)
 		}
 		else{
@@ -53,30 +57,8 @@ $(document).ready(function(){
 	});
 
 	var idleInterval = setInterval(timerIncrement, 800);
-
-		$("#clear").click(function(){
-				cleare();
-		})
-
-		$("#random").click(function(){
-			typeRandom();
-		})
-
-		$("#melt").val("");
-		document.getElementById("melt").focus();
-		typeRandom();
 })
 
-$.fn.scrollView = function() {
-return this.each(function() {
-    $('html, body').animate({
-        scrollTop: $(this).offset().top
-    }, 10);
-    $('html, body').animate({
-        scrollLeft: 0
-    }, 10);
-});
-};
 
 var index = 0;
 
@@ -88,86 +70,9 @@ var idleTime=0
 var lib = [
 				"a","b","c","d","e","f","g","h","i","j",
 				"k","l","m","n","o","p","q","r","s","t",
-				"u","v","w","x","y","z","1","2","3","4",
-				"5","6","7","8","9","0",",","?","!"
+				"u","v","w","x","y","z",",","!","&","(",
+				")","-",";","~","\""
 			  ]
-
-var ranSentences = [
-	"how long will the ice caps last?",
-	"nothing lasts forever.",
-	"we are running out of time",
-	"ephemerality hurts",
-	"temporary temporary temporary",
-	"temperatures rising",
-	"is it too late to save the earth?",
-	"glaciers. gone.",
-	"ice caps. defrosting.",
-	"a very short life.",
-	"alive for only a moment.",
-	"...and it is gone.",
-	"poof! disappeared.",
-	"a global disappearing act.",
-	"unfortunate impermanence.",
-	"goodbye greenland.",
-	"goodbye maldives.",
-	"the earth is melting. panic faster.",
-	"the climate changes, and humans do not.",
-	"if it could last a little longer",
-	"eventually, everything goes away.",
-	"nothing endures, except change.",
-	"today will be the nostalgia of tomorrow.",
-	"immortality is infinitely boring.",
-	"illegibility is not beauty."
-]
-
-function typeRandom(){
-	cleare();
-	var ind = Math.floor(Math.random()*ranSentences.length);
-	typeRecurse(ind,0);
-}
-
-function typeRecurse(i,e){
-	if(e==ranSentences[i].length){
-		var str2 = "#a" + (index+1);
-		$(str2).attr('src', "typing.gif");
-		return;
-	}
-	setTimeout(function(){
-			var code = ranSentences[i].charAt(e);
-			console.log(code)
-			index++;
-			var str = "#a" + index;
-			var str2 = "#a" + (index+1)
-			if(code === " "){
-				$(str).attr('src', "glyphs/empty.jpg")
-			}
-			else if(code === ".")
-			{
-				$(str).attr('src', "glyphs/period.jpg")
-			}
-			else if(code === "?")
-			{
-				$(str).attr('src', "glyphs/question.jpg")
-			}
-			else{
-			var id  = "glyphs/" + code + ".jpg?" + Math.random();
-			// $(str).attr('src', "tester-gif.gif?" + Math.random());
-			$(str).attr('src', id);
-			}
-			typeRecurse(i,e+1)
-	},70);
-}
-
-function cleare(){
-		index = 0;
-		for(x=1;x<=99;x++)
-		{
-			var str = "#a" + x;
-			$(str).attr('src', 'glyphs/empty.jpg');
-		}
-		$("a1").attr('src', 'glyphs/typing.gif');
-		document.getElementById("smile").focus();
-}
 
 //measuring idle time
 function timerIncrement() {
