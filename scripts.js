@@ -70,6 +70,16 @@ $(document).ready(function(){
 		}
 	})
 
+	$('#downloadTitle').click(function(){
+		var c = document.getElementById('#box');
+		var t = c.getContext('2d');
+		window.open('',document.getElementById('the_canvas_element_id').toDataURL());
+	})
+
+	$('#printTitle').click(function(){
+		printContent('box');
+	})
+
 	$('#back').click(function(){
 		if(aboutOpen==true && cameraOpen==false){
 			aboutOpen = false;
@@ -80,12 +90,7 @@ $(document).ready(function(){
 		}
 			document.getElementById("smile").focus();
 		})
-
-
-
-
 })
-
 
 var index = 0;
 
@@ -101,7 +106,7 @@ var lib = [
 				")","-",";","~","\""
 			  ]
 
-//measuring idle time
+// measuring idle time
 function timerIncrement() {
     idleTime = idleTime + 1;
     if (idleTime > 2) { //1.6 seconds
@@ -110,6 +115,16 @@ function timerIncrement() {
         ;
     }
 }
+
+// print contents of div
+function printContent(el){
+	var restorepage = document.body.innerHTML;
+	var printcontent = document.getElementById(el).innerHTML;
+	document.body.innerHTML = printcontent;
+	window.print();
+	document.body.innerHTML = restorepage;
+}
+
 
 function getIEVersion() {
   var sAgent = window.navigator.userAgent;
