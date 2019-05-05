@@ -97,15 +97,34 @@
 }
 
 .glyph{
-	height: 150px;
-	width: 120px;
+	height: 120px;
+	width: 96px;
 	float: left;
 	background-color: #ffffff;
 }
 
 .row{
-	height: 150px;
+	height: 600px;
 	width: 100%;
+}
+
+.bottomScrollText{
+  display: block;
+  position: absolute;
+  bottom:0;
+  margin: 15px;
+  height: 100%;
+}
+
+#scrollText {
+  display: inline-block;
+  /* move to left */
+  position: relative;
+  float: left;
+  font-family: 'SuisseBPIntl-Regular', Regular;
+  font-size: 28px;
+  letter-spacing: -1.4px;
+  margin: 15px;
 }
 
 /* add SuisseBPIntl-Regular font */

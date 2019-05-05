@@ -33,6 +33,7 @@ $(document).ready(function(){
 			var id = "glyphs/period.jpg?" + Math.random();
 			$(str2).attr('src', id)
 		}
+		else if(index == 49){}
 		else if(code == ";"){
 			index++
 			var id = "glyphs/;.jpg?" + Math.random();
