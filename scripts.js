@@ -58,6 +58,17 @@ $(document).ready(function(){
 	});
 
 	var idleInterval = setInterval(timerIncrement, 800);
+
+	$('#infoTitle').click(function(){
+		if(aboutOpen == false){
+		aboutOpen = true
+		$("#aboutPage").css("z-index", "4");
+		$("#aboutPage").animate({opacity: 1}, 150);
+		$("#container").animate({opacity: .5}, 150);
+		$("#aboutText").css("opacity", "1");
+		$("#aboutTitle").css("opacity", "1");
+		}
+	})
 })
 
 
